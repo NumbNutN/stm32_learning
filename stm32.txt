@@ -1,0 +1,55 @@
+//20220101
+
+ST-意法半导体公司名
+M-Microcontroler
+32-32位微控制器
+F-通用型
+1-增强系列
+4-高性能系列
+01子型号
+
+C-48引脚
+R-64引脚
+V-100引脚
+
+6-32KB
+8-64KB
+B-128KB
+C-256KB
+D-384KB
+E-512KB
+G-1MB
+I-2MB
+
+H-BGA封装
+T-LQFP封装
+Y-WLCS64封装
+
+6- -40C-85C
+8- -40C-105C
+
+https://blog.csdn.net/qq_50270150/article/details/124831576
+
+
+//20220103
+
+JTAG
+功能：下载到flash，debug，访问芯片内部信号逻辑状态
+
+//20220103
+
+.hex文件
+
+起始码：   1 :作为起始码
+字节长度:  2 两个十六进制作为字节长度
+地址：     4 相对偏移地址
+指令类型： 2  数据的具体含义
+
+00：记录数据
+01：标识文件结束
+
+keil文档解读：
+https://www.cnblogs.com/shoule/p/15950388.html
+
+hex转bin
+https://blog.csdn.net/sinat_40003796/article/details/119563635

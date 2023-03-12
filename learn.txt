@@ -1,0 +1,79 @@
+linux chmod (change mode)
+更改目录权限用
+
+交叉编译工具
+命名规则： arch [-vendor][-os][-(gnu)eabi][-gcc]
+
+
+启动文件
+在板子一上电或者复位的时候，板子做的第一件事情是读取 0x0000 0000 - 0x0000 0003，把读到的值指向MSP（主栈指针)
+然后读取0x0000 0004 - 0x0000 0007存放的复位向量，把读取到的值指向Reset_Handler
+
+
+
+
+课本知识
+AREA 段定义伪指令
+
+export 
+定义符号可以被外部文件引用
+
+import
+引用另一个源文件的符号
+
+extern
+与import类似，但是程序实际未使用符号则不会加入当前源文件的符号表里
+
+space
+分配连续空间并初始化为0
+
+
+ELF
+
+魔数：ELF文件开头的4个字节
+分别为0x7F 0x45 0x4c 0x46  即 DEL 'E' 'L' 'F'
+
+Half e_type 
+1:ET_REL :可重定位文件.o
+2:ET_EXEC: 可执行文件
+3:ET_DYN:共享目标文件
+
+
+Elf32_Off e_shoff
+段表的偏移地址(Section Header table offset)
+
+段表的结构：以Elf32_Shdr结构体为元素的数组
+
+段的类型
+sh_type
+
+NULL 0 无效段
+PROGBITS 1 程序段、代码段、数据段
+SYMTAB 2 段的内容为符号表
+RELA 4 重定位表
+
+
+段的标志位
+sh_flag
+
+SHF_WRITE 1 在进程空间中可写
+
+SHF_ALLOC 2 在进程空间中要分配空间
+
+SHF_EXECinaSTR 4 可以被执行
+
+
+.rel.text段
+type:REL (Relocation)
+重定位表
+
+外部的变量的重定位信息都记录在重定位表里
+
+比如extern变量  声明了的头文件的引用
+
+data段没有对绝对地址的引用 因此没有.data段的重定位表 .rel.data
+
+//-------------------------------------------------
+202311
+学习了ELF文件的分段设计
+学习了stm32的启动方式

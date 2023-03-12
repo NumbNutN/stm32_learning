@@ -1,0 +1,8 @@
+firmware 固件
+external 外部的
+specific 特定的
+utility 公用程序
+vendor 供应商
+deprecated 弃用
+invoke 援引
+erase 擦除

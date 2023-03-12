@@ -1,0 +1,7 @@
+r run 执行
+b break 断点
+q quit
+c continue 继续
+
+info break  断点信息
+n next 
