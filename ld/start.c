@@ -55,8 +55,6 @@ vector_table_t vector_table = {
 
 
 
-
-
 int main()
 {
     while (1)
